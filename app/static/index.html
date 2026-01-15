@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-wrapper">
+            <header class="app-header">
+                <h1>📋 ToDo App</h1>
+                <p>Spravuj své úkoly snadno a rychle</p>
+            </header>
+
+            <main class="app-main">
+                <!-- Sekce pro vytvoření uživatele -->
+                <section class="section">
+                    <h2>👤 Vytvoř uživatele</h2>
+                    <div class="form-group">
+                        <input type="text" id="username" placeholder="Uživatelské jméno" class="input">
+                        <input type="email" id="email" placeholder="E-mail" class="input">
+                        <button onclick="createUser()" class="btn btn-primary">Vytvořit uživatele</button>
+                    </div>
+                    <div id="userMessage" class="message"></div>
+                </section>
+
+                <!-- Sekce pro výběr uživatele -->
+                <section class="section">
+                    <h2>👥 Vyber uživatele</h2>
+                    <div class="form-group">
+                        <input type="number" id="selectedUserId" placeholder="ID uživatele" class="input" min="1">
+                        <button onclick="loadTasks()" class="btn btn-secondary">Načíst úkoly</button>
+                    </div>
+                </section>
+
+                <!-- Sekce pro vytvoření úkolu -->
+                <section class="section">
+                    <h2>✏️ Vytvořit nový úkol</h2>
+                    <div class="form-group">
+                        <input type="text" id="taskTitle" placeholder="Název úkolu" class="input">
+                        <input type="number" id="taskUserId" placeholder="ID uživatele" class="input" min="1">
+                        <button onclick="createTask()" class="btn btn-success">Přidat úkol</button>
+                    </div>
+                    <div id="taskMessage" class="message"></div>
+                </section>
+
+                <!-- Sekce se seznamem úkolů -->
+                <section class="section">
+                    <h2>📝 Úkoly uživatele</h2>
+                    <div id="tasksList" class="tasks-list">
+                        <p class="placeholder">Žádné úkoly se nenačetly. Vyber uživatele výše.</p>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="app-footer">
+                <p>© 2026 ToDo App - Jednoduché řešení pro správu úkolů</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
