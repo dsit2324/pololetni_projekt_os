@@ -17,6 +17,11 @@ def get_db():
     finally:
         db.close()
 
+# ---------- API root ----------
+@app.get("/api")
+def api_root():
+    return {"message": "API root works!"}
+
 # ---------- API ----------
 @app.post("/api/users", response_model=schemas.UserResponse)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
